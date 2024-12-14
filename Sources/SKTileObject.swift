@@ -326,7 +326,7 @@ open class SKTileObject: SKShapeNode, SKTiledObject {
     }
 
     /// Returns the bounding box of the shape.
-    open var bounds: CGRect {
+    open var rectBounds: CGRect {
         return CGRect(x: 0, y: 0, width: size.width, height: -size.height)
     }
 
@@ -339,7 +339,7 @@ open class SKTileObject: SKShapeNode, SKTiledObject {
             let tileAlignmentY = layer.tilemap.tileHeightHalf
             return CGPoint(x: tileAlignmentX, y: tileAlignmentY)
         }
-        return bounds.center
+        return rectBounds.center
     }
 
     /// Signifies that this object is a text or tile object.
@@ -684,7 +684,7 @@ open class SKTileObject: SKShapeNode, SKTiledObject {
                 let finalScaleValue: CGFloat = (1 / renderQuality) / uiScale
                 textSprite.zPosition = zPosition - 1
                 textSprite.setScale(finalScaleValue)
-                textSprite.position = self.bounds.center
+                textSprite.position = self.rectBounds.center
             }
         }
     }
@@ -700,7 +700,7 @@ open class SKTileObject: SKShapeNode, SKTiledObject {
         let uiScale: CGFloat = TiledGlobals.default.contentScale
 
         // the object's bounding rect
-        let textRect = self.bounds
+        let textRect = self.rectBounds
         let scaledRect = textRect * withScale
 
         // absolute size of the texture rectangle

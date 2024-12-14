@@ -319,7 +319,7 @@ public class SKTiledLayerObject: SKEffectNode, SKTiledObject {
     }
     
     /// Returns the frame rectangle of the layer (used to draw bounds).
-    public var bounds: CGRect {
+    public var rectBounds: CGRect {
         return CGRect(x: 0, y: 0, width: sizeInPoints.width, height: -sizeInPoints.height)
     }
     
@@ -329,7 +329,7 @@ public class SKTiledLayerObject: SKEffectNode, SKTiledObject {
      - returns: `[CGPoint]` array of points.
      */
     public func getVertices() -> [CGPoint] {
-        return self.bounds.points
+        return self.rectBounds.points
     }
     
     /// Returns layer render statisics

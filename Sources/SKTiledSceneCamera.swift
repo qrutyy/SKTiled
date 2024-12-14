@@ -107,7 +107,7 @@ public class SKTiledSceneCamera: SKCameraNode {
     unowned let world: SKNode
     
     /// Camera bounds.
-    internal var bounds: CGRect
+    internal var rectBounds: CGRect
     
     /// Camera observers.
     internal var delegates: [SKTiledSceneCameraDelegate] = []
@@ -237,7 +237,7 @@ public class SKTiledSceneCamera: SKCameraNode {
      */
     public init(view: SKView, world node: SKNode) {
         world = node
-        bounds = view.bounds
+        rectBounds = view.bounds
         super.init()
         
         // add the overlay
@@ -428,7 +428,7 @@ public class SKTiledSceneCamera: SKCameraNode {
      - parameter bounds: `CGRect` camera view bounds.
      */
     public func setCameraBounds(bounds: CGRect) {
-        self.bounds = bounds
+        self.rectBounds = bounds
         
         // notify delegates
         for delegate in delegates {

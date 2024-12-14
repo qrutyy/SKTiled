@@ -294,7 +294,7 @@ public class SKTilemap: SKEffectNode, SKTiledObject {
     public internal(set) var autoResize: Bool = false
 
     /// Map bounds.
-    public var bounds: CGRect = CGRect.zero
+    public var rectBounds: CGRect = CGRect.zero
 
     /// Receive notifications from camera.
     public var receiveCameraUpdates: Bool = true
